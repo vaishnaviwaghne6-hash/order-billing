@@ -1,0 +1,1822 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #24372c;
+  background: #f4f6f2;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.topbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: #fff;
+  border-bottom: 1px solid #e6ebe5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', sans-serif;
+  color: #214e35;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.brand-symbol {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 11px;
+  color: white;
+  background: #286b49;
+  font-size: 18px;
+}
+
+.brand-light {
+  color: #57936d;
+}
+
+.header-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #778579;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #55a775;
+}
+
+.main-container {
+  width: min(1080px, 90%);
+  margin: 0 auto;
+}
+
+.page-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 37px 0 27px;
+}
+
+.eyebrow,
+.step-label {
+  color: #819083;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.page-intro h1 {
+  margin: 9px 0 7px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(28px, 4vw, 37px);
+  letter-spacing: -1.5px;
+}
+
+.page-intro p {
+  margin: 0;
+  color: #7c877d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.quality-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #e1e9df;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.quality-mark > span {
+  color: #42855d;
+  font-size: 25px;
+}
+
+.quality-mark div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quality-mark strong {
+  font-size: 11px;
+}
+
+.quality-mark small {
+  color: #899489;
+  font-size: 10px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(270px, .85fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.order-card,
+.summary-card,
+.receipt-card {
+  padding: 25px;
+  border: 1px solid #e3e9e1;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 6px 25px rgba(31, 54, 37, .035);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title h2,
+.summary-card h2,
+.receipt-card h2 {
+  margin: 8px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  letter-spacing: -.7px;
+}
+
+.water-icon {
+  color: #438765;
+  font-size: 35px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin: 24px 0 20px;
+}
+
+.product-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 17px 5px 15px;
+  border: 1px solid #e3e9e1;
+  border-radius: 11px;
+  background: #fff;
+  color: #344738;
+  transition: border-color .2s, background .2s, transform .2s;
+}
+
+.product-option:hover {
+  transform: translateY(-2px);
+  border-color: #8db69a;
+}
+
+.product-option.selected {
+  border-color: #42845a;
+  background: #f0f7ef;
+  box-shadow: inset 0 0 0 1px #42845a;
+}
+
+.product-check {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: white;
+  background: #34764d;
+  font-size: 10px;
+}
+
+.can-illustration {
+  display: grid;
+  place-items: center;
+  height: 47px;
+  font-size: 32px;
+}
+
+.product-option > strong {
+  font-size: 12px;
+}
+
+.product-price {
+  color: #788579;
+  font-size: 10px;
+}
+
+.quantity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-top: 1px solid #edf0eb;
+  border-bottom: 1px solid #edf0eb;
+}
+
+.quantity-row > div:first-child strong {
+  font-size: 12px;
+}
+
+.quantity-row p {
+  margin: 5px 0 0;
+  color: #859085;
+  font-size: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 5px;
+  border: 1px solid #e2e9df;
+  border-radius: 9px;
+}
+
+.quantity-control button {
+  width: 27px;
+  height: 27px;
+  border: none;
+  border-radius: 6px;
+  background: #eef4ec;
+  color: #326947;
+  font-size: 18px;
+}
+
+.quantity-control span {
+  min-width: 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.total-water {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 27px;
+  padding: 14px;
+  border-radius: 9px;
+  background: #eff6ed;
+}
+
+.total-water span {
+  color: #657966;
+  font-size: 11px;
+}
+
+.total-water strong {
+  color: #286b43;
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+}
+
+.form-heading {
+  margin-bottom: 17px;
+}
+
+.form-heading h2 {
+  margin: 8px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  letter-spacing: -.4px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #dfe6dd;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #2d4032;
+  font-size: 12px;
+  resize: vertical;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: #4d9163;
+  box-shadow: 0 0 0 3px #e8f3e8;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #a0a99f;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e4eae2;
+  border-radius: 10px;
+  margin: 19px 0 27px;
+}
+
+.delivery-copy {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.delivery-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #edf5ea;
+  color: #39754b;
+  font-size: 22px;
+}
+
+.delivery-copy strong {
+  font-size: 11px;
+}
+
+.delivery-copy p {
+  margin: 4px 0 0;
+  color: #849083;
+  font-size: 10px;
+}
+
+.toggle {
+  width: 39px;
+  height: 22px;
+  padding: 3px;
+  border: none;
+  border-radius: 20px;
+  background: #d7ddd5;
+  transition: background .2s;
+}
+
+.toggle span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: transform .2s;
+}
+
+.toggle-on {
+  background: #34764d;
+}
+
+.toggle-on span {
+  transform: translateX(17px);
+}
+
+.payment-heading {
+  margin-bottom: 14px;
+}
+
+.payment-options {
+  display: grid;
+  gap: 9px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8df;
+  border-radius: 9px;
+  background: #fff;
+  text-align: left;
+  color: #536355;
+  font-size: 11px;
+}
+
+.payment-option.payment-selected {
+  border-color: #4c8c60;
+  background: #f1f7ef;
+  color: #285f3c;
+}
+
+.payment-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #edf3e9;
+  font-size: 16px;
+}
+
+.payment-radio {
+  margin-left: auto;
+  color: #39774d;
+  font-size: 15px;
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 21px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 9px;
+  background: #286b46;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background .2s, transform .2s;
+}
+
+.primary-button:hover {
+  background: #205638;
+}
+
+.primary-button:active {
+  transform: scale(.99);
+}
+
+.primary-button > span {
+  font-size: 19px;
+}
+
+.error-message {
+  padding: 10px;
+  border-radius: 7px;
+  background: #fff0ed;
+  color: #ad4537;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.payment-confirm {
+  margin-top: 18px;
+}
+
+.payment-confirm p,
+.payment-confirm small {
+  color: #657567;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.payment-confirm small {
+  display: block;
+  margin-top: 9px;
+  color: #9a7650;
+}
+
+.summary-column {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.summary-card h2 {
+  margin-bottom: 22px;
+}
+
+.summary-product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf0eb;
+}
+
+.summary-water-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 43px;
+  border-radius: 10px;
+  background: #eff6ed;
+  font-size: 22px;
+}
+
+.summary-product > div:nth-child(2) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.summary-product > div:nth-child(2) strong {
+  font-size: 11px;
+}
+
+.summary-product > div:nth-child(2) span {
+  color: #859085;
+  font-size: 10px;
+}
+
+.summary-product > strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 17px;
+  color: #7d897d;
+  font-size: 11px;
+}
+
+.price-line strong {
+  color: #364839;
+}
+
+.bill-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 21px;
+  padding-top: 18px;
+  border-top: 1px dashed #dfe6dd;
+}
+
+.bill-total span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bill-total strong {
+  color: #286b46;
+  font-family: 'Manrope', sans-serif;
+  font-size: 27px;
+  letter-spacing: -1px;
+}
+
+.tax-note {
+  margin: 14px 0 0;
+  color: #939c91;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.confirmed-total {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eef6eb;
+}
+
+.confirmed-total span {
+  color: #758a75;
+  font-size: 10px;
+}
+
+.confirmed-total strong {
+  color: #286b46;
+  font-size: 18px;
+}
+
+.receipt-card h2 {
+  font-size: 18px;
+}
+
+.receipt-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.receipt-status {
+  padding: 6px 8px;
+  border-radius: 20px;
+  background: #fff4df;
+  color: #926626;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.receipt-status.paid,
+.receipt-status.delivered {
+  background: #e8f5e8;
+  color: #2e7747;
+}
+
+.receipt-details {
+  display: grid;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.receipt-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.receipt-details span,
+.receipt-address > span {
+  color: #899389;
+  font-size: 10px;
+}
+
+.receipt-details strong {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+
+.receipt-address {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #edf0eb;
+}
+
+.receipt-address p {
+  color: #48594a;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed #dfe6dd;
+  font-size: 11px;
+}
+
+.receipt-total strong {
+  color: #286b46;
+  font-size: 17px;
+}
+
+.success-message {
+  padding: 10px;
+  border-radius: 8px;
+  background: #edf7ed;
+  color: #286b46;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.delivery-button {
+  margin-top: 13px;
+  justify-content: center;
+}
+
+.secondary-button,
+.new-order-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #dce6da;
+  border-radius: 8px;
+  background: #fff;
+  color: #315b3d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.secondary-button:hover,
+.new-order-button:hover {
+  background: #f1f6ee;
+}
+
+.new-order-button {
+  border: none;
+  color: #768478;
+}
+
+.service-note {
+  display: flex;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid #e1e9dd;
+  border-radius: 12px;
+  background: #edf4e9;
+}
+
+.service-symbol {
+  color: #44825a;
+  font-size: 23px;
+}
+
+.service-note strong {
+  font-size: 11px;
+}
+
+.service-note p {
+  margin: 5px 0 0;
+  color: #788677;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 28px 0;
+  padding-top: 17px;
+  border-top: 1px solid #e1e7de;
+  color: #8b9589;
+  font-size: 9px;
+  letter-spacing: .5px;
+}
+
+@media (max-width: 800px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .summary-card {
+    grid-column: 1 / -1;
+  }
+
+  .service-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 0 5%;
+  }
+
+  .header-tag {
+    font-size: 8px;
+    letter-spacing: .4px;
+  }
+
+  .main-container {
+    width: 92%;
+  }
+
+  .page-intro {
+    padding-top: 27px;
+  }
+
+  .quality-mark {
+    display: none;
+  }
+
+  .order-card,
+  .summary-card,
+  .receipt-card {
+    padding: 18px;
+  }
+
+  .product-grid {
+    gap: 7px;
+  }
+
+  .product-option {
+    padding: 15px 3px 12px;
+  }
+
+  .product-option > strong {
+    font-size: 10px;
+  }
+
+  .product-price {
+    font-size: 9px;
+  }
+
+  .summary-column {
+    display: flex;
+  }
+
+  .page-footer {
+    font-size: 8px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .topbar,
+  .page-intro,
+  .order-card,
+  .summary-card,
+  .service-note,
+  .page-footer,
+  .secondary-button,
+  .new-order-button,
+  .delivery-button {
+    display: none !important;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  .content-grid,
+  .summary-column {
+    display: block;
+  }
+
+  .receipt-card {
+    display: block;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+
+
+/* AquaPure UI animations */
+@keyframes aquaFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes aquaFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes aquaPop {
+  0% { transform: scale(.96); }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+@keyframes aquaShimmer {
+  from { background-position: -180% 0; }
+  to { background-position: 180% 0; }
+}
+.app-shell { animation: aquaFadeUp .55s ease-out both; }
+.order-card { animation: aquaFadeUp .6s .08s ease-out both; }
+.summary-card { animation: aquaFadeUp .6s .16s ease-out both; }
+.receipt-card { animation: aquaFadeUp .4s ease-out both; }
+.live-dot { animation: aquaPop 2s ease-in-out infinite; }
+.water-icon, .quality-mark > span, .service-symbol, .summary-water-icon {
+  animation: aquaFloat 3s ease-in-out infinite;
+}
+.product-option {
+  overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+}
+.product-option:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 20px rgba(40, 107, 70, .11);
+}
+.product-option.selected { animation: aquaPop .28s ease-out; }
+.can-illustration { transition: transform .22s ease; }
+.product-option:hover .can-illustration { transform: translateY(-3px) scale(1.1); }
+.quantity-control button, .payment-option, .secondary-button, .new-order-button {
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.quantity-control button:hover:not(:disabled) { transform: scale(1.1); }
+.payment-option:hover:not(:disabled) { transform: translateX(3px); }
+.primary-button {
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.primary-button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(40, 107, 70, .18); }
+.primary-button:active { transform: scale(.99); }
+.bill-total strong, .total-water strong, .receipt-total strong { animation: aquaPop .3s ease-out; }
+.custom-litres-box {
+  margin: 0 0 18px;
+  padding: 14px;
+  border: 1px solid #e3e9e1;
+  border-radius: 10px;
+  background: #fbfdf9;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.custom-litres-box.custom-litres-active {
+  border-color: #42845a;
+  background: #f0f7ef;
+  box-shadow: 0 0 0 3px rgba(66, 132, 90, .08);
+}
+.custom-litres-box label {
+  display: block;
+  margin-bottom: 8px;
+  color: #435747;
+  font-size: 11px;
+  font-weight: 700;
+}
+.custom-litres-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.custom-litres-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #dfe6dd;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #2d4032;
+  font-size: 12px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.custom-litres-input-wrap input:focus {
+  border-color: #4d9163;
+  box-shadow: 0 0 0 3px #e8f3e8;
+}
+.custom-litres-input-wrap span {
+  color: #286b46;
+  font-size: 11px;
+  font-weight: 700;
+}
+.custom-litres-box small {
+  display: block;
+  margin-top: 7px;
+  color: #849083;
+  font-size: 10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Cute cartoon water cans */
+.cartoon-can {
+  --can-color: #35b8ed;
+  position: relative;
+  width: 76px;
+  height: 102px;
+  margin: 12px auto 18px;
+  border: 3px solid #1686bd;
+  border-radius: 17px 17px 21px 21px;
+  background: linear-gradient(
+    100deg,
+    #b8efff 0%,
+    var(--can-color) 40%,
+    #168acb 100%
+  );
+  box-shadow:
+    inset -7px 0 0 #0876b4,
+    0 9px 0 #d3edf7,
+    0 13px 18px #168acb25;
+  animation: canBounce 2.2s ease-in-out infinite;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease;
+}
+
+/* Different colours for different can sizes */
+.can-2 {
+  --can-color: #55d6a2;
+  transform: scale(0.83);
+  animation-delay: 0.15s;
+}
+
+.can-5 {
+  --can-color: #35b8ed;
+}
+
+.can-10 {
+  --can-color: #a78bfa;
+  transform: scale(1.12);
+  animation-delay: 0.3s;
+}
+
+.can-cap {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e7f9ff;
+  border: 3px solid #1686bd;
+  border-radius: 7px 7px 3px 3px;
+}
+
+.can-label {
+  position: absolute;
+  inset: 19px 7px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #ffffffd9;
+}
+
+.can-shine {
+  position: absolute;
+  left: 8px;
+  top: 15px;
+  width: 5px;
+  height: 34px;
+  border-radius: 9px;
+  background: #ffffffb8;
+}
+
+.can-drop {
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 3px;
+  animation: dropWiggle 2s ease-in-out infinite;
+}
+
+.can-eyes {
+  display: flex;
+  gap: 10px;
+  margin-top: 1px;
+}
+
+.can-eyes i {
+  width: 6px;
+  height: 8px;
+  border-radius: 50%;
+  background: #123b5a;
+  display: block;
+  animation: blinkEyes 4s infinite;
+}
+
+.can-smile {
+  width: 15px;
+  height: 7px;
+  margin-top: 2px;
+  border-bottom: 2.5px solid #123b5a;
+  border-radius: 0 0 15px 15px;
+}
+
+.can-litres {
+  margin-top: 4px;
+  font-size: 10px;
+  font-weight: 900;
+  color: #12658e;
+}
+
+.can-bubble {
+  position: absolute;
+  color: #ffffff;
+  font-weight: 900;
+  animation: bubbleFloat 2.5s ease-in-out infinite;
+}
+
+.bubble-one {
+  right: -14px;
+  top: 10px;
+  font-size: 15px;
+}
+
+.bubble-two {
+  left: -12px;
+  bottom: 16px;
+  font-size: 22px;
+  animation-delay: 0.7s;
+}
+
+/* Hover and selected animations */
+.product-option:hover .cartoon-can {
+  animation: canWiggle 0.5s ease-in-out;
+}
+
+.product-option.selected .cartoon-can {
+  filter: drop-shadow(0 5px 8px #31aee844);
+}
+
+@keyframes canBounce {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -7px;
+  }
+}
+
+@keyframes canWiggle {
+  0%, 100% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: -9deg;
+  }
+  75% {
+    rotate: 9deg;
+  }
+}
+
+@keyframes dropWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.12);
+  }
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-9px);
+    opacity: 1;
+  }
+}
+
+@keyframes blinkEyes {
+  0%, 44%, 48%, 100% {
+    transform: scaleY(1);
+  }
+  46% {
+    transform: scaleY(0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cartoon-can,
+  .can-drop,
+  .can-bubble,
+  .can-eyes i {
+    animation: none;
+  }
+}
+
+/* Water filling animation */
+.cartoon-can {
+  overflow: visible;
+  isolation: isolate;
+}
+
+.can-water-fill {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 0 0 17px 17px;
+  background: linear-gradient(
+    180deg,
+    #91edff 0%,
+    #25b9ee 45%,
+    #0786d1 100%
+  );
+}
+
+.can-selected .can-water-fill {
+  animation: fillWater 2.6s ease-in-out forwards;
+}
+
+.can-label {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.can-shine {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.water-bubble {
+  position: absolute;
+  bottom: -12px;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  background: #d7f8ff88;
+  animation: riseBubble 1.8s linear infinite;
+}
+
+.bubble-a {
+  left: 20%;
+}
+
+.bubble-b {
+  left: 55%;
+  width: 5px;
+  height: 5px;
+  animation-delay: 0.6s;
+}
+
+.bubble-c {
+  left: 78%;
+  width: 4px;
+  height: 4px;
+  animation-delay: 1s;
+}
+
+@keyframes fillWater {
+  0% {
+    height: 0%;
+  }
+
+  65% {
+    height: 62%;
+  }
+
+  85% {
+    height: 72%;
+  }
+
+  100% {
+    height: 76%;
+  }
+}
+
+@keyframes riseBubble {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Water filling station */
+.filling-station {
+  position: sticky;
+  top: 16px;
+  padding: 24px 16px;
+  min-height: 640px;
+  overflow: hidden;
+  border: 1px solid #cbeaff;
+  border-radius: 22px;
+  text-align: center;
+  background: linear-gradient(180deg, #e8f8ff, #ffffff 55%, #d8f2ff);
+  box-shadow: 0 12px 35px rgba(22, 135, 205, 0.12);
+}
+
+.station-heading h2 {
+  margin: 10px 0 6px;
+  color: #07549b;
+}
+
+.station-heading p,
+.filling-caption {
+  color: #527797;
+  font-size: 13px;
+}
+
+.tap-area {
+  position: relative;
+  height: 420px;
+  margin-top: 20px;
+}
+
+/* Cartoon tap */
+.water-tap {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 4;
+  width: 125px;
+  height: 100px;
+  transform: translateX(-50%);
+}
+
+.tap-top {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: 95px;
+  height: 20px;
+  border: 4px solid #0873c8;
+  border-radius: 12px;
+  background: linear-gradient(#7ce4ff, #078fe0);
+}
+
+.tap-body {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  width: 72px;
+  height: 50px;
+  border: 4px solid #0873c8;
+  border-radius: 10px 10px 25px 10px;
+  background: linear-gradient(135deg, #8ceaff, #0799e9 65%, #0870be);
+}
+
+.tap-neck {
+  position: absolute;
+  top: 48px;
+  left: 78px;
+  width: 44px;
+  height: 35px;
+  border: 4px solid #0873c8;
+  border-top: 0;
+  border-radius: 0 0 15px 0;
+  background: linear-gradient(90deg, #35caff, #0784d6);
+}
+
+.tap-spout {
+  position: absolute;
+  top: 69px;
+  left: 83px;
+  width: 40px;
+  height: 15px;
+  border: 4px solid #0873c8;
+  border-radius: 5px;
+  background: #40cfff;
+}
+
+.tap-mouth {
+  position: absolute;
+  top: 80px;
+  left: 91px;
+  width: 23px;
+  height: 8px;
+  border-radius: 50%;
+  background: #034c91;
+}
+
+.tap-handle {
+  position: absolute;
+  z-index: 5;
+  top: 3px;
+  left: calc(50% - 5px);
+  width: 34px;
+  height: 12px;
+  border: 4px solid #0873c8;
+  border-radius: 8px;
+  background: #b2f2ff;
+}
+
+.tap-handle span {
+  position: absolute;
+  top: -12px;
+  left: 11px;
+  width: 5px;
+  height: 12px;
+  background: #0873c8;
+}
+
+/* Stream from tap into the can */
+.water-stream {
+  position: absolute;
+  top: 103px;
+  left: calc(50% + 43px);
+  z-index: 3;
+  width: 17px;
+  height: 155px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #55dfff, #b9f7ff, #12a9ed);
+  animation: streamFlow 0.35s linear infinite;
+}
+
+.water-stream span {
+  position: absolute;
+  left: 3px;
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+  background: white;
+  opacity: 0.8;
+  animation: streamDrops 0.7s linear infinite;
+}
+
+.water-stream span:nth-child(2) {
+  left: 9px;
+  animation-delay: 0.2s;
+}
+
+.water-stream span:nth-child(3) {
+  left: 5px;
+  animation-delay: 0.4s;
+}
+
+@keyframes streamDrops {
+  from {
+    transform: translateY(-25px);
+  }
+  to {
+    transform: translateY(170px);
+  }
+}
+
+@keyframes streamFlow {
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* Large can */
+.filling-can {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  z-index: 2;
+  width: 190px;
+  height: 225px;
+  overflow: hidden;
+  transform: translateX(-50%);
+  border: 5px solid #087dcc;
+  border-radius: 35px 35px 25px 25px;
+  background: rgba(177, 238, 255, 0.45);
+  box-shadow: inset 10px 0 15px #ffffff88,
+    inset -10px 0 15px #138bd544,
+    0 10px 18px #0a78ba30;
+}
+
+.filling-cap {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  z-index: 5;
+  width: 80px;
+  height: 17px;
+  transform: translateX(-50%);
+  border: 4px solid #087dcc;
+  border-radius: 7px;
+  background: #42c9fa;
+}
+
+.filling-water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.08s linear;
+  background: linear-gradient(180deg, #9af0ff, #20baf2 45%, #0789d0);
+}
+
+.water-wave {
+  position: absolute;
+  top: -6px;
+  left: -20%;
+  width: 140%;
+  height: 13px;
+  border-radius: 50%;
+  background: #d9fbff;
+  animation: waveMove 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(-8px) rotate(-2deg);
+  }
+  to {
+    transform: translateX(8px) rotate(2deg);
+  }
+}
+
+.filling-can-shine {
+  position: absolute;
+  top: 25px;
+  left: 13px;
+  z-index: 2;
+  width: 12px;
+  height: 150px;
+  border-radius: 20px;
+  background: #ffffff85;
+}
+
+.filling-face {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px #0870be;
+}
+
+.face-eyes {
+  display: flex;
+  gap: 40px;
+}
+
+.face-eyes i {
+  width: 12px;
+  height: 16px;
+  border-radius: 50%;
+  background: #064a85;
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 45%, 50%, 100% {
+    transform: scaleY(1);
+  }
+  47% {
+    transform: scaleY(0.1);
+  }
+}
+
+.face-smile {
+  width: 25px;
+  height: 13px;
+  border-bottom: 5px solid #064a85;
+  border-radius: 0 0 50% 50%;
+}
+
+.filling-face strong {
+  font-size: 25px;
+}
+
+.fill-bubble {
+  position: absolute;
+  bottom: -15px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: bubblesRise 1.6s linear infinite;
+}
+
+.bubble-one {
+  left: 25%;
+}
+
+.bubble-two {
+  left: 65%;
+  animation-delay: 0.6s;
+}
+
+.bubble-three {
+  left: 45%;
+  animation-delay: 1s;
+}
+
+@keyframes bubblesRise {
+  to {
+    transform: translateY(-190px);
+    opacity: 0;
+  }
+}
+
+.can-ready {
+  animation: readyBounce 0.6s ease;
+}
+
+@keyframes readyBounce {
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+.filling-status {
+  position: absolute;
+  right: 0;
+  bottom: 130px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: #ffffffed;
+  box-shadow: 0 5px 18px #0867a21c;
+  text-align: left;
+}
+
+.filling-status div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filling-status strong {
+  color: #0876bd;
+  font-size: 12px;
+}
+
+.filling-status span {
+  color: #547b98;
+  font-size: 11px;
+}
+
+.status-drop {
+  font-size: 24px;
+}
+
+.filling-progress {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #d3efff;
+}
+
+.filling-progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #13a2f0, #0873d5);
+  transition: width 0.1s linear;
+}
+
+.filling-caption {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .filling-station {
+    position: relative;
+    top: 0;
+    min-height: 600px;
+  }
+
+  .filling-status {
+    right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-stream,
+  .water-stream span,
+  .water-wave,
+  .fill-bubble,
+  .face-eyes i {
+    animation: none;
+  }
+}
+
+.station-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.station-column .filling-station {
+  position: relative;
+  top: auto;
+  width: 100%;
+}
+
+.station-column .summary-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.filling-can {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.filling-water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 76%;
+  background: linear-gradient(
+    to top,
+    #0788ce,
+    #20b9ed,
+    #79e4ff
+  );
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.water-wave {
+  position: absolute;
+  top: -5px;
+  left: -20%;
+  width: 140%;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  animation: waterWave 1s ease-in-out infinite alternate;
+}
+
+.fill-bubble {
+  position: absolute;
+  bottom: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  animation: waterBubble 1.4s ease-in infinite;
+}
+
+.bubble-one { left: 25%; }
+.bubble-two { left: 55%; animation-delay: 0.4s; }
+.bubble-three { left: 75%; animation-delay: 0.8s; }
+
+.filling-can-shine,
+.filling-face {
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes waterWave {
+  from { transform: translateX(-8px); }
+  to { transform: translateX(8px); }
+}
+
+@keyframes waterBubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% { opacity: 1; }
+  100% {
+    transform: translateY(-35px);
+    opacity: 0;
+  }
+}
